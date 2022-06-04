@@ -1,32 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@oguzhan3437 
-oguzhan3437
-/
-Head-Scanner
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Head-Scanner/app/.gitignore
-@oguzhan3437
-oguzhan3437 first commit <3
-Latest commit 4a15c4a on Nov 9, 2021
- History
- 1 contributor
-200 lines (149 sloc)  3.21 KB
-   
+
 /build
 
 # Created by https://www.toptal.com/developers/gitignore/api/androidstudio,java,kotlin,gradle
