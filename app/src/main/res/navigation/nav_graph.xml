@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/dashBoardFragment">
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.oguzhancetin.kitgames.dashBoard.DashBoardFragment"
-        android:label="DashBoardFragment" />
+        android:name="com.oguzhancetin.kitgames.fragment.DashBoardFragment"
+        android:label="DashBoardFragment" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_shapesFragment"
+            app:destination="@id/shapesFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_colorsFragment"
+            app:destination="@id/colorsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_foodsFragment"
+            app:destination="@id/foodsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shapesFragment"
+        android:name="com.oguzhancetin.kitgames.fragment.ShapesFragment"
+        android:label="fragment_shapes"
+        tools:layout="@layout/fragment_shapes" >
+        <action
+            android:id="@+id/action_shapesFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animalsFragment"
+        android:name="com.oguzhancetin.kitgames.fragment.AnimalsFragment"
+        android:label="AnimalsFragment" >
+        <action
+            android:id="@+id/action_animalsFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorsFragment"
+        android:name="com.oguzhancetin.kitgames.fragment.ColorsFragment"
+        android:label="ColorsFragment" >
+        <action
+            android:id="@+id/action_colorsFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.oguzhancetin.kitgames.fragment.ResultFragment"
+        android:label="ResultFragment" >
+        <action
+            android:id="@+id/action_resultFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodsFragment"
+        android:name="com.oguzhancetin.kitgames.fragment.FoodsFragment"
+        android:label="FoodsFragment" >
+        <action
+            android:id="@+id/action_foodsFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
 </navigation>

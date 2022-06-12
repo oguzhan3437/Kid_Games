@@ -1,4 +1,4 @@
-package com.oguzhancetin.kitgames.dashBoard
+package com.oguzhancetin.kitgames.viewModel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
