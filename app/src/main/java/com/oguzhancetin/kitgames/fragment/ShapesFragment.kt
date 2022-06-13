@@ -9,6 +9,7 @@ import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.view.DragEvent
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -29,24 +30,25 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.imageView2.setOnTouchListener { v, motionEvent ->
-            val item = ClipData.Item(v.tag as? CharSequence)
-            val dragData = ClipData(
-                v.tag as? CharSequence,
-                arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
-                item
-            )
-            v.startDragAndDrop(
-                dragData,
-                View.DragShadowBuilder(v),
-                v,
-                0
-            )
-            v.visibility = View.INVISIBLE
-            true
-        }
+         binding.imageViewSquareSource.setOnTouchListener { v, motionEvent ->
+             val item = ClipData.Item(v.tag as? CharSequence)
+             val dragData = ClipData(
+                 v.tag as? CharSequence,
+                 arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
+                 item
+             )
+             v.startDragAndDrop(
+                 dragData,
+                 View.DragShadowBuilder(v),
+                 v,
+                 0
+             )
+             v.visibility = View.INVISIBLE
+             true
+         }
 
-            binding.imageViewSquare.setOnDragListener  { v, dragEvent ->
+
+        binding.imageViewSquareDestination.setOnDragListener { v, dragEvent ->
             val sourceView = dragEvent.localState as ImageView
             when (dragEvent.action) {
                 DragEvent.ACTION_DRAG_STARTED -> {
@@ -56,12 +58,17 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
                 }
                 DragEvent.ACTION_DROP -> {
                     val sourceTag = sourceView.tag
-                    if(sourceTag.equals("square")){
+                    if (sourceTag.equals("square")) {
                         sourceView.setBackgroundColor(0x00000000)
-                        v.setBackgroundColor(ContextCompat.getColor(this.requireContext(), R.color.black))
+                        v.setBackgroundColor(
+                            ContextCompat.getColor(
+                                this.requireContext(),
+                                R.color.black
+                            )
+                        )
                         v.invalidate()
                         true
-                    }else{
+                    } else {
                         false
                     }
 
@@ -77,10 +84,24 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
 
         }
 
-
     }
 
-
+    private fun myOnTouchListener(v: View, motionEvent: MotionEvent) :Boolean{
+        val item = ClipData.Item(v.tag as? CharSequence)
+        val dragData = ClipData(
+            v.tag as? CharSequence,
+            arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
+            item
+        )
+        v.startDragAndDrop(
+            dragData,
+            View.DragShadowBuilder(v),
+            v,
+            0
+        )
+        v.visibility = View.INVISIBLE
+        return true
+    }
 
 
 }

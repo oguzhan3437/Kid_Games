@@ -9,7 +9,7 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/kid_logo</item>
         <!-- Required for animated icons -->
         <item name="windowSplashScreenAnimationDuration">1000</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/kid_logo</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/l1</item>
 
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <!-- Required -->

@@ -8,7 +8,7 @@
         tools:context=".fragment.AnimalsFragment">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewSquareSource"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="140dp"
@@ -19,7 +19,7 @@
             android:background="@color/black"/>
 
         <ImageView
-            android:id="@+id/imageViewSquare"
+            android:id="@+id/imageViewSquareDestination"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="140dp"
