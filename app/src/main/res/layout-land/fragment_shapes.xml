@@ -12,19 +12,19 @@
             android:id="@+id/imageViewSquareSource"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/square"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="68dp"
+            android:background="@drawable/square_svg"
             android:tag="square"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewStarSource"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageViewStarSource" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSquareDestination" />
 
         <ImageView
             android:id="@+id/imageViewSquareDestination"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#43F3D8D8"
-            android:tag="squareDestination"
+            android:tag="square"
             app:layout_constraintEnd_toStartOf="@+id/imageViewStarDestination"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="16dp"
             android:background="#43F3D8D8"
-            android:tag="starDestination"
+            android:tag="star"
             app:layout_constraintEnd_toStartOf="@+id/imageViewTriangleDestination"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewSquareDestination"
@@ -47,7 +47,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#43F3D8D8"
-            android:tag="triangleDestination"
+            android:tag="triangle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewStarDestination"
@@ -63,7 +63,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewSquareSource"
             app:layout_constraintTop_toBottomOf="@+id/imageViewStarDestination"
-            app:srcCompat="@drawable/star" />
+            app:srcCompat="@drawable/star_svg" />
 
         <ImageView
             android:id="@+id/imageViewTriangleSource"
@@ -74,6 +74,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewStarSource"
             app:layout_constraintTop_toTopOf="@+id/imageViewStarSource"
-            app:srcCompat="@drawable/triangle" />
+            app:srcCompat="@drawable/triangle_svg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
