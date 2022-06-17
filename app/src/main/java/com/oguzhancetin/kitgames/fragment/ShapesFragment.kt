@@ -6,6 +6,7 @@ import android.content.ClipDescription
 import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.icu.util.TimeUnit
 import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
@@ -14,6 +15,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.DimenRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
@@ -21,8 +23,23 @@ import com.oguzhancetin.kitgames.R
 import com.oguzhancetin.kitgames.databinding.FragmentShapesBinding
 import com.oguzhancetin.kitgames.util.BaseFragment
 import com.oguzhancetin.kitgames.util.MyDragShadowBuilder
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.Position
+import nl.dionsegijn.konfetti.core.emitter.Emitter
+import kotlin.time.DurationUnit
+
 
 class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
+
+    private var filled = 0
+        set(value) {
+            field = value
+            if (value == 3) {
+                gameFinished()
+            }
+        }
+
+
     private val drawables = hashMapOf(
         "square" to R.drawable.square_svg,
         "triangle" to R.drawable.triangle_svg,
@@ -36,6 +53,7 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
         binding.imageViewSquareSource.setOnTouchListener(::myOnTouchListener)
@@ -80,6 +98,7 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
                     sourceView.setBackgroundColor(0x00000000)
                     v.setViewBackgroundImage()
                     v.invalidate()
+                    filled++
                     true
                 } else {
                     false
@@ -94,6 +113,19 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
             }
             else -> return false
         }
+    }
+
+    private fun gameFinished() {
+       val party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
+            position = Position.Relative(0.5, 0.3),
+            emitter = Emitter(duration = 100, java.util.concurrent.TimeUnit.MILLISECONDS).max(100)
+        )
+        binding.konfettiView.start(party = party)
     }
 
     private fun View.setViewBackgroundImage() =

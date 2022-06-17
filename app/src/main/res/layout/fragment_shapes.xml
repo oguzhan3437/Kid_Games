@@ -36,18 +36,23 @@
             android:layout_height="100dp"
             android:layout_marginTop="16dp"
             android:background="#43F3D8D8"
-            android:tag="starDestination"
+            android:tag="star"
             app:layout_constraintEnd_toStartOf="@+id/imageViewTriangleDestination"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewSquareDestination"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <ImageView
             android:id="@+id/imageViewTriangleDestination"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#43F3D8D8"
-            android:tag="triangleDestination"
+            android:tag="triangle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewStarDestination"
@@ -63,7 +68,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewSquareSource"
             app:layout_constraintTop_toBottomOf="@+id/imageViewStarDestination"
-            app:srcCompat="@drawable/star" />
+            app:srcCompat="@drawable/star_svg" />
 
         <ImageView
             android:id="@+id/imageViewTriangleSource"
@@ -74,6 +79,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageViewStarSource"
             app:layout_constraintTop_toTopOf="@+id/imageViewStarSource"
-            app:srcCompat="@drawable/triangle" />
+            app:srcCompat="@drawable/triangle_svg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

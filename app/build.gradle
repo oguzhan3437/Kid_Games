@@ -57,13 +57,22 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
-
     //hilt
     implementation 'com.google.dagger:hilt-android:2.42'
     kapt 'com.google.dagger:hilt-compiler:2.42'
 
     //splash screen
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+
+    //konfetti
+    implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
+
+    //dataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+
+    //Coroutine
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
 
 
 

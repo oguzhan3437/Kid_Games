@@ -1,19 +1,16 @@
 package com.oguzhancetin.kitgames.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.oguzhancetin.kitgames.R
-import com.oguzhancetin.kitgames.viewModel.DashBoardViewModel
+import com.oguzhancetin.kitgames.viewModel.MainActivityViewModel
 import com.oguzhancetin.kitgames.databinding.DashBoardFragmentLandBinding
 import com.oguzhancetin.kitgames.util.BaseFragment
 
 class DashBoardFragment : BaseFragment<DashBoardFragmentLandBinding>() {
 
-    private val viewModel: DashBoardViewModel by viewModels()
+    private val viewModel: MainActivityViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

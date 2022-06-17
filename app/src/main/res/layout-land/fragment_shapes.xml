@@ -42,6 +42,11 @@
             app:layout_constraintStart_toEndOf="@+id/imageViewSquareDestination"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <ImageView
             android:id="@+id/imageViewTriangleDestination"
             android:layout_width="100dp"
