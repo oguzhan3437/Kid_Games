@@ -19,17 +19,23 @@ import android.widget.Toast
 import androidx.annotation.DimenRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import com.oguzhancetin.kitgames.R
 import com.oguzhancetin.kitgames.databinding.FragmentShapesBinding
 import com.oguzhancetin.kitgames.util.BaseFragment
 import com.oguzhancetin.kitgames.util.MyDragShadowBuilder
+import com.oguzhancetin.kitgames.viewModel.MainActivityViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
 import kotlin.time.DurationUnit
 
-
+@AndroidEntryPoint
 class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
+
+
+
 
     private var filled = 0
         set(value) {
@@ -125,6 +131,7 @@ class ShapesFragment : BaseFragment<FragmentShapesBinding>() {
             position = Position.Relative(0.5, 0.3),
             emitter = Emitter(duration = 100, java.util.concurrent.TimeUnit.MILLISECONDS).max(100)
         )
+        viewModel.addProgress(1)
         binding.konfettiView.start(party = party)
     }
 

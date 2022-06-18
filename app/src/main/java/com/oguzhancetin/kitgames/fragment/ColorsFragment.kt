@@ -10,13 +10,14 @@ import android.widget.ImageView
 import com.oguzhancetin.kitgames.R
 import com.oguzhancetin.kitgames.databinding.FragmentColorsBinding
 import com.oguzhancetin.kitgames.util.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
 import java.util.concurrent.TimeUnit
 
 
-
+@AndroidEntryPoint
 class ColorsFragment : BaseFragment<FragmentColorsBinding>() {
 
     private var filled = 0
@@ -27,16 +28,16 @@ class ColorsFragment : BaseFragment<FragmentColorsBinding>() {
             }
         }
     private val drawables = hashMapOf(
-        "orange" to R.drawable.square_svg,
-        "green" to R.drawable.triangle_svg,
-        "red" to R.drawable.star_svg,
-        "yellow" to R.drawable.star_svg
+        "orange" to R.drawable.orange_ball,
+        "green" to R.drawable.green_ball,
+        "red" to R.drawable.red_ball,
+        "yellow" to R.drawable.yellow_ball
     )
     private val audios = hashMapOf(
-        "orange" to R.raw.apple,
-        "green" to R.raw.rasberry,
-        "red" to R.raw.pear,
-        "yellow" to R.raw.banana
+        "orange" to R.raw.orange,
+        "green" to R.raw.green,
+        "red" to R.raw.red,
+        "yellow" to R.raw.yellow
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -120,6 +121,7 @@ class ColorsFragment : BaseFragment<FragmentColorsBinding>() {
         }
     }
 
+
     private fun gameFinished() {
         val party = Party(
             speed = 0f,
@@ -128,8 +130,9 @@ class ColorsFragment : BaseFragment<FragmentColorsBinding>() {
             spread = 360,
             colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
             position = Position.Relative(0.5, 0.3),
-            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100)
+            emitter = Emitter(duration = 100, java.util.concurrent.TimeUnit.MILLISECONDS).max(100)
         )
+        viewModel.addProgress(1)
         binding.konfettiView.start(party = party)
     }
 

@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.annotation.IntegerRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.oguzhancetin.kitgames.viewModel.MainActivityViewModel
 
 
 abstract class BaseFragment<VB: ViewDataBinding> : Fragment() {
+
+    val viewModel: MainActivityViewModel by viewModels()
 
     private var _binding: VB? = null
     val binding get() = this._binding!!

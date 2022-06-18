@@ -12,12 +12,13 @@ import androidx.fragment.app.Fragment
 import com.oguzhancetin.kitgames.R
 import com.oguzhancetin.kitgames.databinding.FragmentFoodsBinding
 import com.oguzhancetin.kitgames.util.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
 import java.util.concurrent.TimeUnit
 
-
+@AndroidEntryPoint
 class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
 
 
@@ -31,14 +32,14 @@ class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
 
 
     private val drawables = hashMapOf(
-        "apple" to R.drawable.square_svg,
-        "raspberry" to R.drawable.triangle_svg,
-        "pear" to R.drawable.star_svg,
-        "banana" to R.drawable.star_svg
+        "apple" to R.drawable.apple,
+        "tomato" to R.drawable.tomato,
+        "pear" to R.drawable.pear,
+        "banana" to R.drawable.banana
     )
     private val audios = hashMapOf(
         "apple" to R.raw.apple,
-        "raspberry" to R.raw.rasberry,
+        "tomato" to R.raw.tomato,
         "pear" to R.raw.pear,
         "banana" to R.raw.banana
     )
@@ -60,7 +61,7 @@ class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
             setOnClickListener { playAppleName() }
             setOnDragListener(::myOnDragListener)
         }
-        binding.buttonListenRaspberry.apply {
+        binding.buttonListenTomato.apply {
             setOnClickListener { playAppleName() }
             setOnDragListener(::myOnDragListener)
         }
@@ -68,7 +69,7 @@ class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
         binding.imageviewApple.setOnTouchListener(::myOnTouchListener)
         binding.imageviewBanana.setOnTouchListener(::myOnTouchListener)
         binding.imageviewPear.setOnTouchListener(::myOnTouchListener)
-        binding.imageviewRaspberry.setOnTouchListener(::myOnTouchListener)
+        binding.imageviewTomato.setOnTouchListener(::myOnTouchListener)
     }
 
     private fun View.playAppleName() {
@@ -133,6 +134,7 @@ class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
         }
     }
 
+
     private fun gameFinished() {
         val party = Party(
             speed = 0f,
@@ -141,8 +143,9 @@ class FoodsFragment : BaseFragment<FragmentFoodsBinding>() {
             spread = 360,
             colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
             position = Position.Relative(0.5, 0.3),
-            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100)
+            emitter = Emitter(duration = 100, java.util.concurrent.TimeUnit.MILLISECONDS).max(100)
         )
+        viewModel.addProgress(1)
         binding.konfettiView.start(party = party)
     }
 

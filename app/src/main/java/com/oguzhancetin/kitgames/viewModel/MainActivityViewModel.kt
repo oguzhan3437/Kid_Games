@@ -34,6 +34,12 @@ class MainActivityViewModel @Inject constructor(@ApplicationContext private val 
             writeProgress(progress)
         }
     }
+    suspend fun clearProgress(){
+        context.dataStore.edit {
+            val progress: Int = it[PROGRESS_KEY] ?: 0
+            it[PROGRESS_KEY] =  0
+        }
+    }
 
     private suspend fun writeProgress(newProgress: Int) {
         context.dataStore.edit {
