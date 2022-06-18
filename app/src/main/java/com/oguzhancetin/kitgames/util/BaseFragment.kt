@@ -1,9 +1,11 @@
 package com.oguzhancetin.kitgames.util
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IntegerRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
@@ -28,6 +30,14 @@ abstract class BaseFragment<VB: ViewDataBinding> : Fragment() {
     }
 
     abstract fun getDataBinding(): VB
+
+    fun View.makeSoundWithTag(@IntegerRes audios: HashMap<String,Int>) {
+        val audio = audios[this.tag]
+        audio?.let {
+            MediaPlayer.create(this@BaseFragment.requireContext(), audio).start()
+        }
+
+    }
 
 
 

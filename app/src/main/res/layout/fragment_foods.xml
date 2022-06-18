@@ -2,21 +2,123 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.AnimalsFragment">
+        tools:context=".fragment.AnimalsFragment"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
-        <Button
+        <ImageView
+            android:id="@+id/imageview_apple"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="96dp"
+            android:contentDescription=""
+            android:src="@drawable/listen"
+            android:tag="apple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview_banana"
+            app:layout_constraintTop_toBottomOf="@+id/button_listen_apple" />
+
+        <ImageView
+            android:id="@+id/imageview_raspberry"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="96dp"
+            android:contentDescription=""
+            android:src="@drawable/listen"
+            android:tag="raspberry"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_pear"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_listen_raspberry" />
+
+        <ImageView
+            android:id="@+id/imageview_pear"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="96dp"
+            android:contentDescription=""
+            android:src="@drawable/listen"
+            android:tag="pear"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_banana"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview_raspberry"
+            app:layout_constraintTop_toBottomOf="@+id/button_listen_pear" />
+
+        <ImageView
+            android:id="@+id/imageview_banana"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="96dp"
+            android:contentDescription=""
+            android:src="@drawable/listen"
+            android:tag="banana"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_apple"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview_pear"
+            app:layout_constraintTop_toBottomOf="@+id/button_listen_banana" />
+
+        <ImageView
             android:id="@+id/button_listen_apple"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="100dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="36dp"
             android:background="@drawable/listen"
+            android:tag="apple"
             android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_listen_banana"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_listen_pear"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/listen"
+            android:tag="pear"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/button_listen_banana"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_listen_raspberry"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_listen_raspberry"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/listen"
+            android:tag="raspberry"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/button_listen_pear"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_listen_banana"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/listen"
+            android:tag="banana"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/button_listen_apple"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_listen_pear"
+            app:layout_constraintTop_toTopOf="parent" />
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

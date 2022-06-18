@@ -21,9 +21,6 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_foodsFragment"
             app:destination="@id/foodsFragment" />
-        <action
-            android:id="@+id/action_dashBoardFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
     </fragment>
     <fragment
         android:id="@+id/shapesFragment"
@@ -37,7 +34,8 @@
     <fragment
         android:id="@+id/animalsFragment"
         android:name="com.oguzhancetin.kitgames.fragment.AnimalsFragment"
-        android:label="AnimalsFragment" >
+        android:label="AnimalsFragment"
+        tools:layout="@layout/fragment_animals">
         <action
             android:id="@+id/action_animalsFragment_to_dashBoardFragment"
             app:destination="@id/dashBoardFragment" />
@@ -45,23 +43,17 @@
     <fragment
         android:id="@+id/colorsFragment"
         android:name="com.oguzhancetin.kitgames.fragment.ColorsFragment"
-        android:label="ColorsFragment" >
+        android:label="ColorsFragment"
+        tools:layout="@layout/fragment_colors">
         <action
             android:id="@+id/action_colorsFragment_to_dashBoardFragment"
             app:destination="@id/dashBoardFragment" />
     </fragment>
     <fragment
-        android:id="@+id/resultFragment"
-        android:name="com.oguzhancetin.kitgames.fragment.ResultFragment"
-        android:label="ResultFragment" >
-        <action
-            android:id="@+id/action_resultFragment_to_dashBoardFragment"
-            app:destination="@id/dashBoardFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/foodsFragment"
         android:name="com.oguzhancetin.kitgames.fragment.FoodsFragment"
-        android:label="FoodsFragment" >
+        android:label="FoodsFragment"
+        tools:layout="@layout/fragment_foods">
         <action
             android:id="@+id/action_foodsFragment_to_dashBoardFragment"
             app:destination="@id/dashBoardFragment" />
