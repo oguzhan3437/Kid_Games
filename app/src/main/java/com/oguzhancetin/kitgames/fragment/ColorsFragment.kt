@@ -42,19 +42,19 @@ class ColorsFragment : BaseFragment<FragmentColorsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.imageviewColorGreen.apply {
+        binding.imageviewListenColorGreen.apply {
             setOnClickListener { makeSoundWithTag(audios) }
             setOnDragListener(::myOnDragListener)
         }
-        binding.imageviewColorOrange.apply {
+        binding.imageviewListenColorRed.apply {
             setOnClickListener { makeSoundWithTag(audios) }
             setOnDragListener(::myOnDragListener)
         }
-        binding.imageviewColorRed.apply {
+        binding.imageviewListenOrange.apply {
             setOnClickListener { makeSoundWithTag(audios) }
             setOnDragListener(::myOnDragListener)
         }
-        binding.imageviewColorYellow.apply {
+        binding.imageviewListenColorYellow.apply {
             setOnClickListener { makeSoundWithTag(audios) }
             setOnDragListener(::myOnDragListener)
         }
