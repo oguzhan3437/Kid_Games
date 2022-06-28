@@ -6,17 +6,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        app:layoutDescription="@xml/dash_board_fragment_land_scene"
+        tools:context=".MainActivity"
+        android:background="@drawable/katman_1">
 
-        <Button
+        <ImageView
             android:id="@+id/button_goto_shapes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="194dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="144dp"
+            android:background="@drawable/layer1_1_"
+            android:scaleType="fitCenter"
             android:text="Shapes"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_fruits"
             app:layout_constraintEnd_toStartOf="@+id/button_goto_fruits"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button_goto_fruits"
