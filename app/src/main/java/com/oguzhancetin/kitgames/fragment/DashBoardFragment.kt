@@ -58,7 +58,7 @@ class DashBoardFragment : BaseFragment<DashBoardFragmentLandBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        throw RuntimeException("Test Crash")
+
         updateProgressBar()
         binding.buttonGotoShapes.setOnClickListener {
             val action = DashBoardFragmentDirections.actionDashBoardFragmentToShapesFragment()
