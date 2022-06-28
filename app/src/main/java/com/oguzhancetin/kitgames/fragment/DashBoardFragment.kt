@@ -63,6 +63,7 @@ class DashBoardFragment : BaseFragment<DashBoardFragmentLandBinding>() {
             val action = DashBoardFragmentDirections.actionDashBoardFragmentToShapesFragment()
             findNavController().navigate(action)
         }
+
         binding.buttonGotoFruits.setOnClickListener {
             val action = DashBoardFragmentDirections.actionDashBoardFragmentToFoodsFragment()
             findNavController().navigate(action)
