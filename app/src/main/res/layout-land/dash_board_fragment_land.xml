@@ -6,62 +6,64 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/katman_1"
         app:layoutDescription="@xml/dash_board_fragment_land_scene"
-        tools:context=".MainActivity"
-        android:background="@drawable/katman_1">
+        tools:context=".MainActivity">
+
 
         <ImageView
             android:id="@+id/button_goto_shapes"
-            android:layout_width="194dp"
-            android:layout_height="135dp"
-            android:layout_marginTop="144dp"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/layer1_1_"
             android:scaleType="fitCenter"
             android:text="Shapes"
-            app:layout_constraintEnd_toStartOf="@+id/button_goto_fruits"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <ImageView
             android:id="@+id/button_goto_fruits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="148dp"
+            android:background="@drawable/layer1_1_"
             android:text="Fruits"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_animals"
-            app:layout_constraintEnd_toStartOf="@+id/button_goto_animals"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_shapes" />
-
-        <Button
-            android:id="@+id/button_goto_animals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="107dp"
-            android:text="Animals"
             app:layout_constraintEnd_toStartOf="@+id/button_goto_colors"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_fruits"
+            app:layout_constraintTop_toBottomOf="@+id/button_goto_shapes" />
+
+        <ImageView
+            android:id="@+id/button_goto_animals"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/layer1_1_"
+            android:text="Animals"
+            app:layout_constraintStart_toEndOf="@+id/button_goto_shapes"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <ImageView
             android:id="@+id/button_goto_colors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/layer1_1_"
             android:text="Colors"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_animals"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_animals" />
-
+            app:layout_constraintTop_toBottomOf="@+id/button_goto_animals" />
 
         <androidx.compose.ui.platform.ComposeView
             android:id="@+id/segmented_progress_bar"
             android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="240dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

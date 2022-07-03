@@ -6,57 +6,63 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/katman_1"
+        app:layoutDescription="@xml/dash_board_fragment_land_scene"
         tools:context=".MainActivity">
 
-        <Button
+
+        <ImageView
             android:id="@+id/button_goto_shapes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/layer1_1_"
+            android:scaleType="fitCenter"
             android:text="Shapes"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_fruits"
-            app:layout_constraintEnd_toStartOf="@+id/button_goto_fruits"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button_goto_fruits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fruits"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_animals"
-            app:layout_constraintEnd_toStartOf="@+id/button_goto_animals"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_shapes" />
-
-        <Button
-            android:id="@+id/button_goto_animals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="107dp"
-            android:text="Animals"
-            app:layout_constraintEnd_toStartOf="@+id/button_goto_colors"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_fruits"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_goto_colors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Colors"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_goto_animals"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_goto_animals" />
+        <ImageView
+            android:id="@+id/button_goto_fruits"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/layer1_1_"
+            android:text="Fruits"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_goto_colors" />
 
+        <ImageView
+            android:id="@+id/button_goto_animals"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/layer1_1_"
+            android:text="Animals"
+            app:layout_constraintStart_toEndOf="@+id/button_goto_shapes"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_goto_colors"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="104dp"
+            android:background="@drawable/layer1_1_"
+            android:text="Colors"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.compose.ui.platform.ComposeView
             android:id="@+id/segmented_progress_bar"
-            android:layout_width="300dp"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="240dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.587"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
